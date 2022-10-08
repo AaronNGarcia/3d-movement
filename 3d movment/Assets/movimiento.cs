@@ -11,6 +11,7 @@ public class movimiento : MonoBehaviour
     public bool tocoElPiso;
     public float salto;
     public Text score;
+    public GameObject victoria;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -58,6 +59,10 @@ public class movimiento : MonoBehaviour
             Destroy(collision.gameObject);
             puntaje ++;
             score.text = ("PUNTUACION: " + puntaje);
+        }
+        if (puntaje == 6)
+        {
+            victoria.SetActive(true);
         }
     }
 }
